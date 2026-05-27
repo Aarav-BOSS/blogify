@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Blogify</title>
+  <link rel="stylesheet" href="css/style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+</head>
+<body>
+
+  <!-- Background blobs -->
+  <div class="bg-blob blob1"></div>
+  <div class="bg-blob blob2"></div>
+  <div class="bg-blob blob3"></div>
+
+  <!-- Top Nav -->
+  <nav class="glass-nav">
+    <div class="nav-logo">📝 Blogify</div>
+    <div class="nav-links">
+      <a href="index.html" class="active">Home</a>
+      <a href="pages/sharktank5.html">Shark Tank S5</a>
+    </div>
+    <button class="add-btn" onclick="window.location.href='pages/sharktank5.html'">+ Add</button>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero">
+    <h1>Welcome to <span class="gradient-text">Blogify</span></h1>
+    <p>Your one-stop summary hub. No need to watch every episode — we've got you covered.</p>
+  </section>
+
+  <!-- Blog Categories -->
+  <section class="categories">
+    <h2>Explore Blogs</h2>
+    <div class="blog-grid">
+
+      <div class="glass-card blog-card" onclick="window.location.href='pages/sharktank5.html'">
+        <div class="card-icon">🦈</div>
+        <h3>Shark Tank</h3>
+        <p class="season-badge">Season 5</p>
+        <p class="card-desc">All pitcher summaries from Shark Tank India Season 5 — investments, sharks, company details and more.</p>
+        <span class="card-link">Read Blogs →</span>
+      </div>
+
+      <!-- Placeholder cards for future blogs -->
+      <div class="glass-card blog-card coming-soon">
+        <div class="card-icon">🚀</div>
+        <h3>More Coming Soon</h3>
+        <p class="card-desc">New blog categories will be added here.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Shark Tank S5 — Blogify</title>
+  <link rel="stylesheet" href="../css/style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+</head>
+<body>
+
+  <div class="bg-blob blob1"></div>
+  <div class="bg-blob blob2"></div>
+  <div class="bg-blob blob3"></div>
+
+  <!-- Top Nav -->
+  <nav class="glass-nav">
+    <div class="nav-logo" onclick="window.location.href='../index.html'" style="cursor:pointer">📝 Blogify</div>
+    <div class="nav-links">
+      <a href="../index.html">Home</a>
+      <a href="sharktank5.html" class="active">Shark Tank S5</a>
+    </div>
+    <button class="add-btn" onclick="openModal()">+ Add Episode</button>
+  </nav>
+
+  <!-- Page Header -->
+  <section class="page-header">
+    <div class="breadcrumb">🏠 Home &gt; 🦈 Shark Tank S5</div>
+    <h1>Shark Tank <span class="gradient-text">Season 5</span></h1>
+    <p>All pitcher summaries in one place. Click any episode to read the full breakdown.</p>
+  </section>
+
+  <!-- Episodes Grid -->
+  <section class="categories">
+    <div class="blog-grid" id="episodesGrid">
+      <!-- Episodes injected by JS -->
+    </div>
+    <div class="empty-state" id="emptyState" style="display:none">
+      <p>No episodes yet. Hit <strong>+ Add Episode</strong> to get started!</p>
+    </div>
+  </section>
+
+  <!-- Episode Detail Modal -->
+  <div class="modal-overlay" id="detailModal" onclick="closeDetailModal(event)">
+    <div class="glass-modal">
+      <button class="modal-close" onclick="closeDetail()">✕</button>
+      <div id="modalContent"></div>
+    </div>
+  </div>
+
+  <!-- Add / Edit Episode Modal -->
+  <div class="modal-overlay" id="addModal" onclick="closeAddModal(event)">
+    <div class="glass-modal">
+      <button class="modal-close" onclick="closeAdd()">✕</button>
+      <h2 id="formTitle">Add New Episode</h2>
+      <form id="episodeForm" onsubmit="saveEpisode(event)">
+        <input type="hidden" id="editIndex" value="-1"/>
+        <div class="form-group">
+          <label>Episode Number</label>
+          <input type="number" id="epNumber" placeholder="e.g. 1" required min="1"/>
+        </div>
+        <div class="form-group">
+          <label>Pitcher Name</label>
+          <input type="text" id="pitcherName" placeholder="Name of the pitcher" required/>
+        </div>
+        <div class="form-group">
+          <label>Sharks Name(s)</label>
+          <input type="text" id="sharksName" placeholder="e.g. Namita, Vineeta, Aman"/>
+        </div>
+        <div class="form-group">
+          <label>Company Name</label>
+          <input type="text" id="companyName" placeholder="Company / Startup name" required/>
+        </div>
+        <div class="form-group">
+          <label>Company Info</label>
+          <textarea id="companyInfo" placeholder="What does the company do? What was the ask?" rows="3"></textarea>
+        </div>
+        <div class="form-group">
+          <label>Got Investment?</label>
+          <select id="gotInvestment">
+            <option value="Yes">✅ Yes</option>
+            <option value="No">❌ No</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Other Info</label>
+          <textarea id="otherInfo" placeholder="Deal amount, equity, counter offers, etc." rows="2"></textarea>
+        </div>
+        <button type="submit" class="submit-btn">💾 Save Episode</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="../js/episodes.js"></script>
+</body>
+</html>
